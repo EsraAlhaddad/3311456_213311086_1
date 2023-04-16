@@ -73,7 +73,7 @@ class DataManager {
   static List<UnbordingContent> contents = [
     UnbordingContent(
         id: 0,
-        title: "Welcome To Traveler!",
+        title: "Welcome To Traveller!",
         image: "images/screen_1.png",
         discription: "How would you like to take a trip with us? ^_~"),
     UnbordingContent(

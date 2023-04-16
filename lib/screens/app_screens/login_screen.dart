@@ -55,9 +55,6 @@ class _LoginState extends State<Login> {
                           borderSide: BorderSide(color: Colors.grey),
                         ),
                       ),
-                      inputFormatters: [
-                        FilteringTextInputFormatter.singleLineFormatter
-                      ],
                     ),
                     cusstnSizeBox(),
                     TextField(

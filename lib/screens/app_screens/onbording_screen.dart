@@ -96,7 +96,6 @@ class _OnbordingState extends State<Onbording> {
                           builder: (_) => Login(),
                         ));
                   } else {
-                    //mabaref şu had
                     _controller?.nextPage(
                       duration: Duration(microseconds: 100),
                       curve: Curves.bounceIn,
