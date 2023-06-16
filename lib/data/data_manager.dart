@@ -7,9 +7,6 @@ class DataManager {
       id: 0,
       mainImage: 'images/istanbul.jpg',
       title: " İstanbul",
-      image1: "images/details_image1.jpg",
-      image2: "images/details_image1.jpg",
-      image3: "images/details_image1.jpg",
       starCount: '3.0',
       discription: "Istanbul  is a mega city that sits in both Europe and Asia,"
           "divided by the Bosporus. Although it is the largest city of Turkey,"
@@ -22,9 +19,6 @@ class DataManager {
       id: 1,
       mainImage: 'images/konya.jpg',
       title: " Konya",
-      image1: "images/details_image1.jpg",
-      image2: "images/details_image1.jpg",
-      image3: "images/details_image1.jpg",
       discription: "Konya  is a major city in central Turkey,"
           " on the southwestern edge of the Central Anatolian Plateau,"
           " and is the capital of Konya Province."
@@ -39,9 +33,6 @@ class DataManager {
       id: 2,
       mainImage: 'images/izmir.jpg',
       title: " İzmir",
-      image1: "images/details_image1.jpg",
-      image2: "images/details_image2.jpg",
-      image3: "images/details_image3.jpg",
       discription:
           "Izmir is a metropolitan city in the western extremity of Turkey and"
           "the third most populous city in Turkey, after Istanbul and Izmir."
@@ -57,9 +48,6 @@ class DataManager {
       id: 3,
       mainImage: 'images/ankara.jpg',
       title: " Ankara",
-      image1: "images/details_image1.jpg",
-      image2: "images/details_image1.jpg",
-      image3: "images/details_image1.jpg",
       discription: "Ankara is the capital city of Turkey and the country's"
           " second largest city after Istanbul. "
           "The city has a population (as of 2019) of 5,5 million,"
@@ -69,12 +57,34 @@ class DataManager {
           " Hellenistic, and Byzantine periods it was known as Ánkyra. "
           "Ankara also serves as the capital of the Province of Ankara.",
     ),
+    CitiesModel(
+      id: 4,
+      mainImage: 'images/trabzon.jpg',
+      title: " Trabzon",
+      starCount: '5.0',
+      discription: "Trabzon ,  is a city on the Black Sea coast of northeastern"
+          " Turkey and the capital of Trabzon Province."
+          " Trabzon, located on the historical Silk Road, became a melting pot of religions,"
+          " languages and culture for centuries and a trade gateway to Persia in the southeast"
+          " and the Caucasus to the northeast. ",
+    ),
+    CitiesModel(
+      id: 5,
+      mainImage: 'images/antalya.jpg',
+      title: " Antalya",
+      starCount: '4.0',
+      discription: "Antalya  is the fifth-most populous city in Turkey "
+          "as well as the capital of Antalya Province. It is seen as the capital of tourism"
+          " in Turkey.Located on Anatolia's southwest coast bordered by the Taurus Mountains,"
+          " Antalya is the largest Turkish city on the Mediterranean coast outside"
+          "the Aegean region with over one million people in its metropolitan area.",
+    ),
   ];
   static List<UnbordingContent> contents = [
     UnbordingContent(
         id: 0,
         title: "Welcome To Traveller!",
-        image: "images/screen_1.png",
+        image: "images/logo.png",
         discription: "How would you like to take a trip with us? ^_~"),
     UnbordingContent(
         id: 1,

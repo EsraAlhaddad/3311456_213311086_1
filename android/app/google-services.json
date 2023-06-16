@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "581286700898",
-    "project_id": "traveler-2f82d",
-    "storage_bucket": "traveler-2f82d.appspot.com"
+    "project_number": "884380245845",
+    "project_id": "traveller-b0fac",
+    "storage_bucket": "traveller-b0fac.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:581286700898:android:65ba80a314b2babc016e3b",
+        "mobilesdk_app_id": "1:884380245845:android:b561c6fb89927fceb999dc",
         "android_client_info": {
           "package_name": "com.example.traveller"
         }
       },
       "oauth_client": [
         {
-          "client_id": "581286700898-bvh1055sqtqs8iks4o2hrjd6i100kvt7.apps.googleusercontent.com",
+          "client_id": "884380245845-lhi24fjc8e0ku5281sfircgfe168m6ov.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCI1AAiTMQHIqX09yg3CgYM_Z2HrZ3A0po"
+          "current_key": "AIzaSyA4h0gLfrX4MStGW50yaJfzE1McyzUG9VU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "581286700898-bvh1055sqtqs8iks4o2hrjd6i100kvt7.apps.googleusercontent.com",
+              "client_id": "884380245845-lhi24fjc8e0ku5281sfircgfe168m6ov.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

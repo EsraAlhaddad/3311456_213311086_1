@@ -38,11 +38,22 @@ dependencies:
   introduction_screen: ^3.1.7
   curved_navigation_bar: ^1.0.3
   rename: ^2.1.1
-  
+  path_provider: ^2.0.15
+  http: ^0.13.5
+  dartz: ^0.10.1
+  fluttertoast: ^8.2.2
+  hive: ^2.0.4
+  hive_flutter: ^1.1.0
+  image_picker: ^0.8.7+5
+  firebase_core: ^2.13.1
+  firebase_auth: ^4.6.2
+  cloud_firestore: ^4.8.0
+  fl_chart: ^0.35.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+    
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -65,7 +76,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/
-  #   - images/a_dot_ham.jpeg
+    - images/login_screen.jpg
+    - images/resim.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

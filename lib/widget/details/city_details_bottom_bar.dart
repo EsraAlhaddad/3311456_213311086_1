@@ -64,23 +64,6 @@ class CityDetailsBottomBar extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                Row(
-                    children: List.generate(
-                  4,
-                  (index) => Padding(
-                    padding: EdgeInsets.only(right: 5, bottom: 10),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15),
-                      child: Image(
-                        image:
-                            AssetImage("images/details_image${index + 1}.jpg"),
-                        fit: BoxFit.cover,
-                        width: 83,
-                        height: 120,
-                      ),
-                    ),
-                  ),
-                ))
               ],
             ),
           ),

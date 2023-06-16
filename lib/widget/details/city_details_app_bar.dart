@@ -36,27 +36,6 @@ class _CityDetailsAppBarState extends State<CityDetailsAppBar> {
               ),
             ),
           ),
-          InkWell(
-            onTap: () {},
-            child: Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 14, 40, 62),
-                borderRadius: BorderRadius.circular(15),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.white,
-                    blurRadius: 6,
-                  ),
-                ],
-              ),
-              child: Icon(
-                Icons.favorite_border,
-                color: Colors.white,
-                size: 28,
-              ),
-            ),
-          )
         ],
       ),
     );

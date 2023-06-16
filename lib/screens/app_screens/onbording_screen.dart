@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:traveller/data/data_manager.dart';
-import 'login_screen.dart';
+import 'package:traveller/widget/pages/auth.dart';
 
-class Onbording extends StatefulWidget {
+class Onboarding extends StatefulWidget {
   @override
-  State<Onbording> createState() => _OnbordingState();
+  State<Onboarding> createState() => _OnboardingState();
 }
 
-class _OnbordingState extends State<Onbording> {
-  int currentINDEX = 0;
-
+class _OnboardingState extends State<Onboarding> {
+  int currentIndex = 0;
   PageController? _controller;
 
   @override
@@ -21,90 +20,93 @@ class _OnbordingState extends State<Onbording> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 198, 177, 197),
-        appBar: AppBar(
-          title: Text(
-            "TRAVELER",
-            style: TextStyle(fontStyle: FontStyle.italic),
-          ),
-          shadowColor: Colors.black,
-          backgroundColor: Color.fromARGB(255, 14, 40, 62),
+      backgroundColor: Color.fromARGB(255, 198, 177, 197),
+      appBar: AppBar(
+        title: Text(
+          "TRAVELER",
+          style: TextStyle(fontStyle: FontStyle.italic),
         ),
-        body: Column(
-          children: [
-            Expanded(
-              child: PageView.builder(
-                  onPageChanged: (val) {
-                    setState(() {
-                      currentINDEX = val;
-                    });
-                  },
-                  controller: _controller,
-                  itemCount: DataManager.contents.length,
-                  itemBuilder: (dartCobject, i) {
-                    return Padding(
-                      padding: const EdgeInsets.all(40),
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            DataManager.contents[i].image,
-                            height: 300,
-                          ),
-                          Text(
-                            DataManager.contents[i].title,
-                            style: TextStyle(
-                              fontSize: 35,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Text(
-                            DataManager.contents[i].discription,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.black,
-                            ),
-                          )
-                        ],
+        shadowColor: Colors.black,
+        backgroundColor: Color.fromARGB(255, 14, 40, 62),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: PageView.builder(
+              onPageChanged: (val) {
+                setState(() {
+                  currentIndex = val;
+                });
+              },
+              controller: _controller,
+              itemCount: DataManager.contents.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsets.all(30),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        DataManager.contents[index].image,
+                        height: MediaQuery.of(context).size.height * 0.4,
                       ),
-                    );
-                  }),
+                      SizedBox(height: 30),
+                      Text(
+                        DataManager.contents[index].title,
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Text(
+                        DataManager.contents[index].discription,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
             ),
-            Container(
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 14, 40, 62),
-                  borderRadius: BorderRadius.circular(20)),
-              height: 55,
-              margin: EdgeInsets.all(40),
-              width: double.infinity,
-              child: TextButton(
-                child: Text(
-                  currentINDEX == DataManager.contents.length - 1
-                      ? "CONTİNUE"
-                      : "NEXT",
-                  style: TextStyle(color: Colors.white),
-                  textAlign: TextAlign.center,
-                ),
-                onPressed: () {
-                  if (currentINDEX == DataManager.contents.length - 1) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => Login(),
-                        ));
-                  } else {
-                    _controller?.nextPage(
-                      duration: Duration(microseconds: 100),
-                      curve: Curves.bounceIn,
-                    );
-                  }
-                },
+          ),
+          Container(
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 14, 40, 62),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            height: 55,
+            margin: EdgeInsets.all(40),
+            width: double.infinity,
+            child: TextButton(
+              child: Text(
+                currentIndex == DataManager.contents.length - 1
+                    ? "CONTINUE"
+                    : "NEXT",
+                style: TextStyle(color: Colors.white),
+                textAlign: TextAlign.center,
               ),
-            )
-          ],
-        ));
+              onPressed: () {
+                if (currentIndex == DataManager.contents.length - 1) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => Auth()),
+                  );
+                } else {
+                  _controller?.nextPage(
+                    duration: Duration(milliseconds: 100),
+                    curve: Curves.bounceIn,
+                  );
+                }
+              },
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

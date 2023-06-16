@@ -9,18 +9,20 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
+      decoration: BoxDecoration(
+        image: DecorationImage(
           image: AssetImage(DataManager.Details[id].mainImage),
           fit: BoxFit.cover,
-        )),
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          appBar: PreferredSize(
-            preferredSize: Size.fromHeight(90),
-            child: CityDetailsAppBar(),
-          ),
-          bottomNavigationBar: CityDetailsBottomBar(id: this.id),
-        ));
+        ),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(90),
+          child: CityDetailsAppBar(),
+        ),
+        bottomNavigationBar: CityDetailsBottomBar(id: this.id),
+      ),
+    );
   }
 }

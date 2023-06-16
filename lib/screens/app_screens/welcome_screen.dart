@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:traveller/screens/app_screens/home_screen.dart';
+import 'package:traveller/widget/home/home_bottom_bar_widget.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  var personName;
-  WelcomeScreen(this.personName);
+  WelcomeScreen();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,7 +21,7 @@ class WelcomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Welcome $personName",
+                  "Welcome",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 35,
@@ -54,8 +53,10 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HomeBottomBar()));
                   },
                   child: Ink(
                     padding: EdgeInsets.all(15),
