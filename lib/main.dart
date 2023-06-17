@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:traveller/widget/pages/auth.dart';
 import 'package:traveller/screens/home_bottom_bar_screens/home_screen.dart';
 import 'package:traveller/screens/app_screens/onbording_screen.dart';
-import 'package:traveller/screens/app_screens/welcome_screen.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
