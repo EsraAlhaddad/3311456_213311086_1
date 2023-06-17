@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
@@ -24,21 +25,26 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   }
 
   Future<void> _pickImage(ImageSource source) async {
-    final pickedImage = await ImagePicker().pickImage(source: source);
-    if (pickedImage != null) {
-      setState(() {
-        _profileImage = File(pickedImage.path);
-      });
+    if (!kIsWeb) {
+      final pickedImage = await ImagePicker().pickImage(source: source);
+      if (pickedImage != null) {
+        setState(() {
+          _profileImage = File(pickedImage.path);
+        });
+      }
     }
   }
 
   Future<void> _saveImage(File image) async {
-    final directory = await getApplicationDocumentsDirectory();
-    final imagePath = '${directory.path}/profile_image.png';
-    await image.copy(imagePath);
-    setState(() {
-      _savedImagePath = imagePath;
-    });
+    if (!kIsWeb) {
+      print('============== using android platform');
+      final directory = await getApplicationDocumentsDirectory();
+      final imagePath = '${directory.path}/profile_image.png';
+      await image.copy(imagePath);
+      setState(() {
+        _savedImagePath = imagePath;
+      });
+    }
 
     showDialog(
       context: context,
@@ -72,12 +78,15 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   }
 
   Future<void> _deleteImage() async {
-    if (_profileImage != null) {
-      await _profileImage!.delete();
-      setState(() {
-        _profileImage = null;
-        _savedImagePath = null;
-      });
+    if (!kIsWeb) {
+      if (_profileImage != null) {
+        await _profileImage!.delete();
+        setState(() {
+          _profileImage = null;
+          _savedImagePath = null;
+        });
+      }
+      ;
 
       showDialog(
         context: context,
@@ -111,13 +120,15 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   }
 
   Future<void> _loadSavedImage() async {
-    final directory = await getApplicationDocumentsDirectory();
-    final imagePath = '${directory.path}/profile_image.png';
-    final savedImage = File(imagePath);
-    if (await savedImage.exists()) {
-      setState(() {
-        _savedImagePath = imagePath;
-      });
+    if (!kIsWeb) {
+      final directory = await getApplicationDocumentsDirectory();
+      final imagePath = '${directory.path}/profile_image.png';
+      final savedImage = File(imagePath);
+      if (await savedImage.exists()) {
+        setState(() {
+          _savedImagePath = imagePath;
+        });
+      }
     }
   }
 
