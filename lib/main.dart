@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:traveller/widget/pages/auth.dart';
 import 'package:traveller/screens/home_bottom_bar_screens/home_screen.dart';
@@ -14,9 +13,7 @@ Future<void> main() async {
   );
   await Firebase.initializeApp();
   await Hive.initFlutter();
-  if (!kIsWeb) {
-    await Hive.openBox("Bookmark");
-  }
+  await Hive.openBox("Bookmark");
 
   runApp(MyApp());
 }
