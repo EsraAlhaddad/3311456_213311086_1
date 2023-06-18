@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -22,8 +23,10 @@ class _HomeBodyState extends State<HomeBody> {
   @override
   void initState() {
     super.initState();
-    Hive.openBox("Bookmark");
-    Hive.box("Bookmark");
+    if (!kIsWeb) {
+      Hive.openBox("Bookmark");
+      Hive.box("Bookmark");
+    }
   }
 
   @override

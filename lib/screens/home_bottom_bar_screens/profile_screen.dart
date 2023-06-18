@@ -116,7 +116,9 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   @override
   void initState() {
     super.initState();
-    _loadSavedImage();
+    if (!kIsWeb) {
+      _loadSavedImage();
+    }
   }
 
   Future<void> _loadSavedImage() async {
