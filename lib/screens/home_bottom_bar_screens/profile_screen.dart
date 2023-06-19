@@ -277,7 +277,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               ),
             ),
             MaterialButton(
-              onPressed: () async {
+              onLongPress: () async {
                 await FirebaseAuth.instance.signOut();
                 Navigator.pushReplacement(
                   context,
@@ -285,6 +285,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                 );
               },
               color: Color.fromARGB(255, 14, 40, 62),
+              onPressed: () {},
               child: Text(
                 'Sign Out',
                 style: TextStyle(
