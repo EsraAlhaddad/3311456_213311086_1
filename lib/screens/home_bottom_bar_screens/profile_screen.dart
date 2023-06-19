@@ -294,21 +294,33 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               ),
             ),
             SizedBox(height: 8),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 14, 40, 62),
-                shadowColor: Colors.black,
-              ),
-              onPressed: () {
+            GestureDetector(
+              onDoubleTap: () {
                 SystemNavigator.pop();
               },
-              child: Text(
-                'Exit',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 198, 177, 197),
+              child: Center(
+                child: Container(
+                  height: 50,
+                  width: 80,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 14, 40, 62),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black,
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Exit',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 198, 177, 197),
+                      ),
+                    ),
+                  ),
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),

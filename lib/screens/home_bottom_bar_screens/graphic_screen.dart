@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
-class PieChartPage extends StatelessWidget {
+class PieChartPage extends StatefulWidget {
+  @override
+  _PieChartPageState createState() => _PieChartPageState();
+}
+
+class _PieChartPageState extends State<PieChartPage> {
+  double rotationAngle = 0;
+
   final List<PieChartSectionData> pieChartData = [
     PieChartSectionData(
       color: Colors.red,
@@ -9,7 +16,10 @@ class PieChartPage extends StatelessWidget {
       title: 'İstanbul',
       radius: 60,
       titleStyle: TextStyle(
-          fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
     ),
     PieChartSectionData(
       color: Colors.orange,
@@ -17,7 +27,10 @@ class PieChartPage extends StatelessWidget {
       title: 'Ankara',
       radius: 60,
       titleStyle: TextStyle(
-          fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
     ),
     PieChartSectionData(
       color: Colors.blue,
@@ -25,7 +38,10 @@ class PieChartPage extends StatelessWidget {
       title: 'Trabzon',
       radius: 60,
       titleStyle: TextStyle(
-          fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
     ),
     PieChartSectionData(
       color: Colors.green,
@@ -33,7 +49,10 @@ class PieChartPage extends StatelessWidget {
       title: 'Antalya',
       radius: 60,
       titleStyle: TextStyle(
-          fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
     ),
     PieChartSectionData(
       color: Colors.yellow,
@@ -41,7 +60,10 @@ class PieChartPage extends StatelessWidget {
       title: 'İzmir',
       radius: 60,
       titleStyle: TextStyle(
-          fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
     ),
     PieChartSectionData(
       color: Colors.purple,
@@ -49,7 +71,10 @@ class PieChartPage extends StatelessWidget {
       title: 'Konya',
       radius: 60,
       titleStyle: TextStyle(
-          fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
     ),
   ];
 
@@ -63,14 +88,24 @@ class PieChartPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Center(
-            child: AspectRatio(
-              aspectRatio: 1.3,
-              child: PieChart(
-                PieChartData(
-                  sectionsSpace: 0,
-                  centerSpaceRadius: 40,
-                  sections: pieChartData,
+          GestureDetector(
+            onPanUpdate: (details) {
+              setState(() {
+                rotationAngle += details.delta.dx / 10;
+              });
+            },
+            child: Center(
+              child: AspectRatio(
+                aspectRatio: 1.3,
+                child: Transform.rotate(
+                  angle: rotationAngle,
+                  child: PieChart(
+                    PieChartData(
+                      sectionsSpace: 0,
+                      centerSpaceRadius: 40,
+                      sections: pieChartData,
+                    ),
+                  ),
                 ),
               ),
             ),
