@@ -9,7 +9,6 @@ class WeatherScreen extends StatefulWidget {
 
 class _WeatherScreenState extends State<WeatherScreen> {
   late Future myWeather;
-
   @override
   void initState() {
     super.initState();
@@ -18,7 +17,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   TextEditingController _searchController = TextEditingController();
   var focusNode = FocusNode();
-
   @override
   void dispose() {
     focusNode.dispose();
@@ -196,7 +194,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                           ),
                                           const SizedBox(height: 15),
                                           Text(
-                                            '${((snapshot.data!.Current['temp'] - 32 * 5) / 9).toStringAsFixed(2)}',
+                                            '${snapshot.data!.Current['temp'].toStringAsFixed(2)}°',
                                             style: const TextStyle(
                                               color: Color.fromARGB(
                                                   255, 14, 40, 62),
