@@ -13,7 +13,7 @@ class Auth extends StatelessWidget {
         if (SnapShot.hasData) {
           return WelcomeScreen();
         } else {
-          return SigInpScreen();
+          return SigInScreen();
         }
       }),
     ));

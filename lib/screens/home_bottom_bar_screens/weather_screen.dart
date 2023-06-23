@@ -16,7 +16,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   }
 
   TextEditingController _searchController = TextEditingController();
-  var focusNode = FocusNode();
+  var focusNode = FocusNode(); //odak durumunu yönetmek için
   @override
   void dispose() {
     focusNode.dispose();

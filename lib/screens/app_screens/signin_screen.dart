@@ -2,12 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:traveller/screens/app_screens/signup_screen.dart';
 
-class SigInpScreen extends StatefulWidget {
+class SigInScreen extends StatefulWidget {
   @override
-  State<SigInpScreen> createState() => _SigInpScreenState();
+  State<SigInScreen> createState() => _SigInScreenState();
 }
 
-class _SigInpScreenState extends State<SigInpScreen> {
+class _SigInScreenState extends State<SigInScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
@@ -15,16 +15,18 @@ class _SigInpScreenState extends State<SigInpScreen> {
   void dispose() {
     super.dispose();
     _emailController.dispose();
-    _passwordController.dispose();
+    _passwordController.dispose(); //belleği gereksiz işgal etmemek için
   }
 
   Future<void> signIn() async {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _emailController.text.trim(),
-        password: _passwordController.text.trim(),
+        password:
+            _passwordController.text.trim(), //gereksiz boşlukları kaldırır
       );
     } catch (e) {
+      //exception
       showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -37,7 +39,7 @@ class _SigInpScreenState extends State<SigInpScreen> {
               ),
             ),
             content: Text(
-              'An error occurred: $e',
+              'e-mail address is not correct',
               style: TextStyle(
                 color: Color.fromARGB(255, 198, 177, 197),
               ),
@@ -102,7 +104,7 @@ class _SigInpScreenState extends State<SigInpScreen> {
                       controller: _emailController,
                       decoration: InputDecoration(
                         prefixIcon: Icon(
-                          Icons.person,
+                          Icons.email_outlined,
                           color: Colors.blue,
                         ),
                         hintText: "Email",

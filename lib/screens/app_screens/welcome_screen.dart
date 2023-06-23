@@ -17,7 +17,8 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   void initState() {
     _animationController = AnimationController(
-      vsync: this,
+      vsync: this, //dikey senkronizasyon
+      // animasyonun düzgün zamanlanması ve senkronizasyonu için
       duration: Duration(seconds: 2),
     );
 
@@ -33,7 +34,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       curve: Curves.easeInOut,
     ));
 
-    _animationController.forward();
+    _animationController.forward(); //başlatmak için
 
     super.initState();
   }

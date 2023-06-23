@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart'; //web
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
@@ -37,7 +37,6 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
 
   Future<void> _saveImage(File image) async {
     if (!kIsWeb) {
-      print('============== using android platform');
       final directory = await getApplicationDocumentsDirectory();
       final imagePath = '${directory.path}/profile_image.png';
       await image.copy(imagePath);

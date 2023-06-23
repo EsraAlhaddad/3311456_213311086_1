@@ -123,7 +123,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
             ),
             content: Text(
-              'An error occurred: $e',
+              'e-mail address is not correct',
               style: TextStyle(
                 color: Color.fromARGB(255, 198, 177, 197),
               ),
@@ -189,7 +189,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       controller: _emailController,
                       decoration: InputDecoration(
                         prefixIcon: Icon(
-                          Icons.person,
+                          Icons.email_outlined,
                           color: Colors.blue,
                         ),
                         hintText: "Email",
